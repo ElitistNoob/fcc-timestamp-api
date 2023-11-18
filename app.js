@@ -1,19 +1,20 @@
 const fullDate = require('./utilities/date')
-const { getDateString, getTime } = fullDate
 const express = require('express');
 const app = express();
-const port = 3000;
+
 const absolutePath = `${__dirname}/index.html`
 const publicPath  = `${__dirname}/public`
+
+const { getDateString, getTime } = fullDate
+
+const cors = require('cors')
+
+app.use(cors({optionsSuccessStatus: 200}));
 
 app.use(express.static(publicPath));
 
 app.get('/', (req, res) => {
     res.sendFile(absolutePath);
-})
-
-app.listen(port,() => {
-    console.log({port: port})
 })
 
 app.get('/api/:inputtedDate',  (req, res) => {
@@ -25,4 +26,8 @@ app.get('/api/:inputtedDate',  (req, res) => {
     }
 
     res.json({'unix': getTime(data), 'utc': getDateString(data)})
+})
+
+const listener = app.listen(process.env.PORT,() => {
+    console.log({port: listener.address().port})
 })
