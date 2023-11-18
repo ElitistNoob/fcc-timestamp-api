@@ -2,7 +2,6 @@ const fullDate = require('./utilities/date')
 const { getDateString, getTime } = fullDate
 const express = require('express');
 const os = require('os');
-const net = require("net");
 const app = express();
 const port = 3000;
 const absolutePath = `${__dirname}/views/index.html`
