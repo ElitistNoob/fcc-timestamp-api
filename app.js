@@ -3,21 +3,18 @@ const express = require('express');
 const app = express();
 
 const absolutePath = `${__dirname}/index.html`
-const publicPath  = `${__dirname}/public`
-
 const { getDateString, getTime } = fullDate
 
 const cors = require('cors')
 
 app.use(cors({optionsSuccessStatus: 200}));
-
-app.use(express.static(publicPath));
+app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     res.sendFile(absolutePath);
 })
 
-app.get('/api/:inputtedDate',  (req, res) => {
+app.get('api/:inputtedDate',  (req, res) => {
     const { inputtedDate } = req.params
     let data = inputtedDate;
 
