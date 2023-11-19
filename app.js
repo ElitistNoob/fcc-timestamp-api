@@ -17,7 +17,7 @@ function isValidDate(str) {
     return parsedDate.toString() !== 'Invalid Date'
 }
 
-app.get('/api/timestamp/:date?',  (req, res) => {
+app.get('/api/:date?',  (req, res) => {
     const { date } = req.params
     const dateFormat = isNaN(date) ? date : parseInt(date);
     let dateQuery = new Date(dateFormat);
