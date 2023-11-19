@@ -17,10 +17,6 @@ header {
     border-bottom: 1px solid #666;
 }
 
-a {
-    color: #ff6633;
-}
-
 header h1 {
     font-size: 2rem;
     font-weight: 600;
@@ -30,12 +26,6 @@ header h1 {
 
 section {
     padding-top: 2rem;
-}
-
-.links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
 }
 
 .preview {
@@ -57,6 +47,10 @@ ul {
 li {
     padding-left: 1rem;
     list-style-type: none;
+}
+
+.links li {
+    padding-left: 0;
 }
 
 li:first-of-type {
