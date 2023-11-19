@@ -1,6 +1,6 @@
 body {
     align-items: center;
-    background-color: #333;
+    background-color: #060606;
     color: #f1f1f1;
     text-align: center;
     min-height: 100svh;
@@ -39,13 +39,26 @@ section {
 }
 
 .preview {
-    background-color: #ff6633;
+    background-color: #f6f6f6;
     width: fit-content;
     margin-inline: auto;
-    color: #333333;
+    color: #060606;
     padding: .25rem 1rem;
     border-radius: 3px;
-    box-shadow: 0 3px 6px rgba(0 0 0 / 0.2);
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Source Code Pro', sans-serif;
     font-size: 14px;
+    text-align: left;
+}
+
+ul {
+    padding-left: 0;
+}
+
+li {
+    padding-left: 1rem;
+    list-style-type: none;
+}
+
+li:first-of-type {
+    padding-bottom: 0.5rem;
 }
